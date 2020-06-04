@@ -4,6 +4,8 @@ import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
@@ -39,5 +41,11 @@ public class mainPanel extends JPanel{
 		add(locationpane,gbc);
 		gbc.gridy++;
 		add(startpane,gbc);
+ 		
+		startPane.startBtnActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("OP");
+			}
+		});
 	}
 }

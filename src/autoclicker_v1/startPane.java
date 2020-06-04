@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -13,7 +15,8 @@ public class startPane extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JButton start = new JButton("Start");
+	public static boolean running = false;
+	private static JButton start = new JButton("Start");
 	private JButton stop = new JButton("Stop(F6)");
 	private JButton hotkey = new JButton("Hotkeys");
 	private JButton help = new JButton("Help");
@@ -22,6 +25,7 @@ public class startPane extends JPanel{
 		stop.setPreferredSize(new Dimension(200,40));
 		hotkey.setPreferredSize(new Dimension(200,40));
 		help.setPreferredSize(new Dimension(200,40));
+		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.gridx = 0;
@@ -38,5 +42,15 @@ public class startPane extends JPanel{
 		add(hotkey,gbc);
 		gbc.gridx++;
 		add(help,gbc);
+		
+	}
+	public void setRunning(boolean status) {
+		startPane.running = status;
+	}
+	public static boolean getRunning() {
+		return startPane.running;
+	}
+	public static void startBtnActionListener(ActionListener e){
+		start.addActionListener(e);
 	}
 }
