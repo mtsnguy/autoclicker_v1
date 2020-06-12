@@ -18,10 +18,10 @@ public class clickPane extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JLabel clickLabel = new JLabel("Click type: ");
 	private JLabel xLabel = new JLabel("Mouse Button: ");
-	private String[] choices1 = {"Single","Double"};
-	private String[] choices2 = {"Left","Right"};
-	private JComboBox<String> clickType = new JComboBox<String>(choices1);
-	private JComboBox<String> xType = new JComboBox<String>(choices2);
+	private static String[] choices1 = {"Single","Double"};
+	private static String[] choices2 = {"Left","Right"};
+	private static JComboBox<String> clickType = new JComboBox<String>(choices1);
+	private static JComboBox<String> xType = new JComboBox<String>(choices2);
 	public clickPane() {
 		setLayout(new GridBagLayout());
 		setBorder(new CompoundBorder(new TitledBorder("Click Options"),new EmptyBorder(15,10,5,15)));
@@ -40,10 +40,10 @@ public class clickPane extends JPanel{
 		add(clickType,gbc);
 
 	}
-	public String getType() {
+	public static String getType() {
 		return (String) clickType.getSelectedItem();
 	}
-	public String getPlaceholder() {
+	public static String getPlaceholder() {
 		return (String) xType.getSelectedItem();
 	}
 

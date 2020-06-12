@@ -15,8 +15,8 @@ public class repeatPane extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JRadioButton radioNum = new JRadioButton("Repeat:");
-	private JRadioButton radioForever = new JRadioButton("Repeat until stopped");
+	private static JRadioButton radioNum = new JRadioButton("Repeat:");
+	private static JRadioButton radioForever = new JRadioButton("Repeat until stopped");
 	private JTextField num = new JTextField(4);
 	
 	public repeatPane() {

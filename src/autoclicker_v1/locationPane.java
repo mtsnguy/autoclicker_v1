@@ -17,11 +17,11 @@ public class locationPane extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField locX = new JTextField(4);
-	private JTextField locY = new JTextField(4);
-	private JRadioButton pLocation = new JRadioButton();
-	private JRadioButton cLocation = new JRadioButton("Current Location");
-	private JButton pickLocation = new JButton("Pick Location");
+	private static JTextField locX = new JTextField(4);
+	private static JTextField locY = new JTextField(4);
+	private static JRadioButton pLocation = new JRadioButton();
+	private static JRadioButton cLocation = new JRadioButton("Current Location");
+	private static JButton pickLocation = new JButton("Pick Location");
 	private JLabel pXLabel = new JLabel("X:");
 	private JLabel pYLabel = new JLabel("Y:");
 	public locationPane() {
@@ -51,13 +51,13 @@ public class locationPane extends JPanel{
 		add(locY,gbc);
 
 	}
-	public String getXloc() {
+	public static String getXloc() {
 		return locX.getText();
 	}
-	public String getYloc() {
+	public static String getYloc() {
 		return locY.getText();
 	}
-	public String getSelect() {
+	public static String getSelect() {
 		return "place";
 	}
 

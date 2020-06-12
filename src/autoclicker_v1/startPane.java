@@ -16,16 +16,16 @@ public class startPane extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	public static boolean running = false;
-	private static JButton start = new JButton("Start");
-	private JButton stop = new JButton("Stop(F6)");
-	private JButton hotkey = new JButton("Hotkeys");
-	private JButton help = new JButton("Help");
+	static JButton start = new JButton("Start(F6)");
+	static JButton stop = new JButton("Stop(F6)");
+	JButton hotkey = new JButton("Hotkeys");
+	JButton help = new JButton("Help");
 	public startPane() {
 		start.setPreferredSize(new Dimension(200,40));
 		stop.setPreferredSize(new Dimension(200,40));
 		hotkey.setPreferredSize(new Dimension(200,40));
 		help.setPreferredSize(new Dimension(200,40));
-		
+		stop.setEnabled(false);
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.gridx = 0;
@@ -44,7 +44,7 @@ public class startPane extends JPanel{
 		add(help,gbc);
 		
 	}
-	public void setRunning(boolean status) {
+	public static void setRunning(boolean status) {
 		startPane.running = status;
 	}
 	public static boolean getRunning() {
@@ -52,5 +52,8 @@ public class startPane extends JPanel{
 	}
 	public static void startBtnActionListener(ActionListener e){
 		start.addActionListener(e);
+	}
+	public static void stopBtnActionListener(ActionListener e){
+		stop.addActionListener(e);
 	}
 }

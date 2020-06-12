@@ -15,16 +15,20 @@ public class intervalPane extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField hours = new JTextField(4);
-	private JTextField mins = new JTextField(4);
-	private JTextField secs = new JTextField(4);
-	private JTextField millisecs = new JTextField(4);
+	private static JTextField hours = new JTextField(4);
+	private static JTextField mins = new JTextField(4);
+	private static JTextField secs = new JTextField(4);
+	private static JTextField millisecs = new JTextField(4);
 	private JLabel h = new JLabel("hours ");
 	private JLabel m = new JLabel("mins");
 	private JLabel s = new JLabel("secs");
 	private JLabel ms = new JLabel("milliseconds");
 	
 	public intervalPane() {
+		hours.setText("0"); 
+		mins.setText("0"); 
+		secs.setText("0"); 
+		millisecs.setText("100"); 
 		setLayout(new GridBagLayout());
 		setBorder(new CompoundBorder(new TitledBorder("Click Interval"),new EmptyBorder(8,3,8,3)));
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -54,16 +58,16 @@ public class intervalPane extends JPanel{
 		add(ms,gbc);
 
 	}
-	public String getHours() {
+	public static String getHours() {
 		return hours.getText();
 	}
-	public String getMins() {
+	public static String getMins() {
 		return mins.getText();
 	}
-	public String getSecs() {
+	public static String getSecs() {
 		return secs.getText();
 	}
-	public String getMillisecs() {
+	public static String getMillisecs() {
 		return millisecs.getText();
 	}
 	public void setHours(String h) {
